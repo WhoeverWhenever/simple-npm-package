@@ -1,0 +1,24 @@
+{
+  "name": "@whoever_whenever/most-occured-letter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhoeverWhenever/simple-npm-package.git"
+  },
+  "keywords": [
+    "most",
+    "occured",
+    "letter"
+  ],
+  "author": "Whoever Whenever",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhoeverWhenever/simple-npm-package/issues"
+  },
+  "homepage": "https://github.com/WhoeverWhenever/simple-npm-package#readme",
+  "description": ""
+}
