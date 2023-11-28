@@ -1,23 +1,23 @@
 function findMostOccuredLetter(str) {
     let regEx = /[a-zA-Z]+/g;
     let onlyLettersString = [...str.match(regEx)].join("").toLowerCase();
-    let lettersOccuring = new Map();
+    let lettersOccuring = {};
     for (let i = 0; i < onlyLettersString.length; i++) {
-        if (lettersOccuring.has(onlyLettersString[i])) {
-            lettersOccuring.set(onlyLettersString[i], lettersOccuring.get(onlyLettersString[i]) + 1);
+        if (onlyLettersString[i] in lettersOccuring) {
+            lettersOccuring[onlyLettersString[i]] += 1;
         }
         else {
-            lettersOccuring.set(onlyLettersString[i], 1);
+            lettersOccuring[onlyLettersString[i]] = 1;
         }
     }
 
-    let maxOccures = Math.max(...lettersOccuring.values());
-    for (let [key, value] of lettersOccuring.entries()) {
+    let maxOccures = Math.max(...Object.values(lettersOccuring));
+    for (let [key, value] of Object.entries(lettersOccuring)) {
         if (value !== maxOccures) {
-            lettersOccuring.delete(key);
+            delete lettersOccuring[key];
         }
     }
-    return Object.fromEntries(lettersOccuring);
+    return lettersOccuring;
 }
 
 module.exports = findMostOccuredLetter;
